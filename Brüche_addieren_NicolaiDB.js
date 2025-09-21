@@ -1,78 +1,52 @@
-x= "8_5/13"
-y= "6_3/15"
 
-function string_to_bruch(bruch)
-{
+class Bruch {
+    constructor(ganze, zaehler, nenner) {
+        this.ganze = ganze;
+        this.zaehler = zaehler;
+        this.nenner = nenner;
+    }
 
-    bruch_trennung1=bruch.split("_")
-    ganze_zahl=Number (bruch_trennung1[0])
-    bruch_trennung2=bruch_trennung1[1].split("/")
-    zähler=Number (bruch_trennung2[0])
-    nenner=Number (bruch_trennung2[1])
-    return[ganze_zahl, zähler, nenner]
-    
-}
+    static fromString(str) {
+        const [ganze, bruchteil] = str.split("_");
+        const [zaehler, nenner] = bruchteil.split("/").map(Number);
+        return new Bruch(Number(ganze), zaehler, nenner);
+    }
 
-bruch1=string_to_bruch(x)
-bruch2=string_to_bruch(y)
+    toImproper() {
+        return this.ganze * this.nenner + this.zaehler;
+    }
 
+    static kgv(a, b) {
+        let max = Math.max(a, b);
+        while (true) {
+            if (max % a === 0 && max % b === 0) return max;
+            max++;
+        }
+    }
 
-let kgv;
-let x1;
-let x2;
-let b = 0;
+    add(other) {
+        const kgv = Bruch.kgv(this.nenner, other.nenner);
+        const mult1 = kgv / this.nenner;
+        const mult2 = kgv / other.nenner;
+        const z1 = this.toImproper() * mult1;
+        const z2 = other.toImproper() * mult2;
+        let zaehlerGesamt = z1 + z2;
+        const ganze = Math.floor(zaehlerGesamt / kgv);
+        zaehlerGesamt = zaehlerGesamt % kgv;
+        return new Bruch(ganze, zaehlerGesamt, kgv);
+    }
 
-for(let i = 1; b == 0; i++) 
-{
-    x1 = i % bruch1[2];
-    x2 = i % bruch2[2];
-    if(x1 == 0 && x2 == 0) 
-    {
-        b = 1;
-        kgv = i;
-        
+    toString() {
+        return `${this.ganze}_${this.zaehler}/${this.nenner}`;
     }
 }
 
+const x = "8_5/13";
+const y = "6_3/15";
 
-function multiplikator (bruch,  )
-{
-    let mult=kgv / bruch[2]
-    return mult;
-}
+const bruch1 = Bruch.fromString(x);
+const bruch2 = Bruch.fromString(y);
 
-
-function Zählermultiplizieren(bruch, multi)
-{
-    let NeuZähler = bruch[1] * multi
-    return NeuZähler;
-}
-
-NeuZähler1 = Zählermultiplizieren(bruch1, multiplikator(bruch1, kgv))
-NeuZähler2 = Zählermultiplizieren(bruch2, multiplikator(bruch2, kgv))
-
-
-
-let Zählergesamt = NeuZähler1 + NeuZähler2
-
-
-function ganzezahlenaddieren(bruch1, bruch2, Zählergesamt, kgv)
-{
-    if(Zählergesamt >= kgv)
-    {
-        ZählergesamtA=Math.floor(Zählergesamt / kgv)
-        Zählergesamt=Zählergesamt % kgv
-        ganzezahl=bruch1[0] + bruch2[0] + ZählergesamtA 
-        return[ganzezahl, Zählergesamt]
-    }
-    else if(Zählergesamt < kgv)
-    {
-        ganzezahl=bruch1[0] + bruch2[0]
-        return[ganzezahl, Zählergesamt]
-    }
-}
-
-ganzezahl=ganzezahlenaddieren(bruch1, bruch2, Zählergesamt, kgv)
-
-console.log("Ergebnis: "+ganzezahl[0]+"_"+ganzezahl[1]+"/"+kgv)
+const ergebnis = bruch1.add(bruch2);
+console.log("Ergebnis: " + ergebnis.toString());
 
