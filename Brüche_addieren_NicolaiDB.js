@@ -41,11 +41,8 @@ class Bruch {
     }
 }
 
-const x = "8_5/13";
-const y = "6_3/15";
-
-const bruch1 = Bruch.fromString(x);
-const bruch2 = Bruch.fromString(y);
+const bruch1 = Bruch.fromString(process.argv[2]);
+const bruch2 = Bruch.fromString(process.argv[3]);
 
 const ergebnis = bruch1.add(bruch2);
 console.log("Ergebnis: " + ergebnis.toString());
