@@ -3,7 +3,7 @@ import { assertEquals } from "@std/assert";
 
 let e=0
 
-while(e<15)
+for(e=0;e<15;e++)
 {
     const Zähler_ergebnis=Math.ceil(Math.random()*100);
     const zeahler=Math.ceil(Math.random()*100);
@@ -17,11 +17,12 @@ while(e<15)
 
     const b1 = new Bruch(0,erweiterterZähler1,erweiterterNenner);
     const b2= new Bruch(0,erweiterterZähler2,erweiterterNenner);
+    const b3= new Bruch(0,Zähler_ergebnis,nenner);
 
     Deno.test(`Bruch Addition Random Test`, () => {
-        assertEquals(b1.addiere(b2).toString(), Zähler_ergebnis.toString());
+        assertEquals(b1.addiere(b2).toString(), b3.toString());
     });    
-    e++
+   
    
 };
 
