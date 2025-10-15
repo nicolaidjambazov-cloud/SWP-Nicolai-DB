@@ -10,7 +10,7 @@ function primzahl(n: number): [boolean, string] {
         else
         {
             return[true, n+ " Ist eine Primzahl"]
-        }
+        },
     }   
 }
 
