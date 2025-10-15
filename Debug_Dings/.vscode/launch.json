@@ -1,22 +1,23 @@
 {
+
     "version": "0.2.0",
     "configurations": [
         {
             "request": "launch",
-            "name": "Deno Debug",
+            "name": "Debug my Deno",
             "type": "node",
+            
             "cwd": "${workspaceFolder}/Debug_Dings",
             "env": {},
-            "runtimeExecutable": "C:\\Users\\Nicol\\.deno\\bin\\deno.exe",
-            "console": "integratedTerminal",
+            "runtimeExecutable": "/C:\Users\Nicol\.deno\bin\deno.exe",
             "runtimeArgs": [
                 "run",
+                "--unstable",
                 "--inspect-wait",
                 "--allow-all",
-                "Primzahl.ts"
+                "main.ts"
             ],
             "attachSimplePort": 9229
         }
     ]
 }
-
