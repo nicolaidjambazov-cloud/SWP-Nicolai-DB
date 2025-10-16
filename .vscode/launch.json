@@ -7,10 +7,10 @@
         
         {
             "request": "launch",
-            "name": "GRG bastelei",
+            "name": "Debug",
             "type": "node",
-            "program": "${workspaceFolder}/Debug_Dings",
-            "cwd": "${workspaceFolder}/Debug_Dings",
+            "program": "${workspaceFolder}/Debug_Dings_HÜ",
+            "cwd": "${workspaceFolder}/Debug_Dings_HÜ",
             "env": {},
             "runtimeExecutable": "C:\\Users\\Nicol\\.deno\\bin\\deno.EXE",
             "runtimeArgs": [
