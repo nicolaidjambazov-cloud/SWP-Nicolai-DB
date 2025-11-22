@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href= "style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+
+    <style>
+    body {
+      font-family: 'Imperial Script', cursive;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+    p {
+      font-weight: 400;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<h1>HÜ von nikolai</h1>
+
+
+<section>
+    <h1>Meine Lieblings fußballer</h1>
+    <h2>Abduhlla Machmudi</h2>
+    <img src="Abduhlla_Machmudi.png">
+
+    <h2>Uweuweuweueufnetzuweueoas123456</h2>
+    <img src="Uweuweuweueufnetzuweueoas123456.png">
+
+    <h2>Sami Alwazeh</h2>
+    <img src="Sami Alwazeh.png">
+
+    <h2>Max Havel</h2>
+    <img src="Max_Havel.png">
+
+    <h2>X_Sweat</h2>
+    <img src="Otto Lotto.png">
+
+</section>
+
+
+
+
+<section>
+    <h2>Video</h2>
+    <video controls width="600">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section>
+    <h2>Audio</h2>
+    <audio controls>
+  <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+</audio>
+</section>
+
+<section>
+    <label for="name">Name (4 to 8 characters):</label>
+    <input
+  type="text"
+  id="name"
+  name="name"
+  required
+  minlength="4"
+  maxlength="8"
+  size="20" />
+    </script>
+</section>
+
+<section>
+<table>
+<caption>Otto Noten</caption>
+<thead>
+    <tr>
+        <th scope="col">Fach</th>
+        <th scope="col">Note</th>
+        <th scope="col">Gelernt?</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Mathe</td>
+        <td>5</td>
+        <td>Nein</td>
+    </tr>
+
+    <tr>
+        <td>Deutsch</td>
+        <td>5</td>
+        <td>Nein</td>
+    </tr>
+
+    <tr>
+        <td>Englisch</td>
+        <td>5</td>
+        <td>Nein</td>
+    </tr>
+
+</tbody>
+</table>
+</section>
+
+<section class="kauf-bereich">
+  <label for="Produkt">Produkt wählen:</label>
+  <select id="Produkt" name="Produkt">
+    <option value="">Hier wählen</option>
+    <option value="Laptop">Laptop: 999,00$</option>
+    <option value="Tablet">Tablet: 800,99$</option>
+    <option value="Smartphone">Smartphone: 500,00$</option>
+  </select>
+
+  
+  <h3 id="produktTitel" style="display:none; margin-top: 1em;"></h3>
+
+  
+  <form id="kaufForm" action="" method="get" class="form-example" style="display:none; margin-top: 1em;">
+    <div class="form-example">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required />
+    </div>
+
+    <div class="form-example">
+      <label for="nummer">Kartennummer:</label>
+      <input type="text" name="nummer" id="nummer" required />
+    </div>
+
+    <div class="form-example">
+      <label for="pin">Sicherheits-PIN:</label>
+      <input type="password" name="pin" id="pin" required />
+    </div>
+
+    <div class="form-example">
+      <input type="submit" value="Kaufen" />
+    </div>
+  </form>
+</section>
+
+
+<script>
+  const produktSelect = document.getElementById("Produkt");
+  const kaufForm = document.getElementById("kaufForm");
+  const produktTitel = document.getElementById("produktTitel");
+
+  produktSelect.addEventListener("change", function () {
+    if (this.value) {
+      
+      produktTitel.textContent = this.value + " kaufen";
+      produktTitel.style.display = "block";
+      
+      kaufForm.style.display = "block";
+    } else {
+      
+      produktTitel.style.display = "none";
+      kaufForm.style.display = "none";
+    }
+  });
+</script>
+
+
+</body>
+</html>
