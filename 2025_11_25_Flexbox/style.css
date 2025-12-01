@@ -1,0 +1,112 @@
+body {
+    background: #1a1a1a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sektion schöner machen */
+section {
+    background: linear-gradient(145deg, #5e5e5e, #4a4a4a);
+    padding: 2em;
+    border-radius: 40px;
+    margin: 4em auto;
+    width: 80%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+section:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+
+h1 {
+    color: gold;
+    font-size: 6em;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+h2 {
+    color: gold;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h3 {
+    color: black;
+    font-size: 3em;
+    text-align: left;
+}
+
+
+label {
+    font-size: 2em;
+    color: azure;
+}
+
+input {
+    font-size: 2em;
+    padding: 0.3em 0.6em;
+    border-radius: 10px;
+    border: 2px solid #333;
+    outline: none;
+    background: #eee;
+    transition: 0.2s ease;
+}
+
+input:focus {
+    border-color: gold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Tabelle */
+caption {
+    font-size: 2.5em;
+    color: azure;
+    margin-bottom: 0.5em;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 1.7em;
+    text-align: left;
+    margin: 2em auto;
+    background: #2a2a2a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+th {
+    background: gold;
+    color: black;
+    padding: 0.5em 1em;
+}
+
+td {
+    padding: 0.5em 1em;
+    border: 1px solid #333;
+}
+
+tr:nth-child(even) {
+    background: #3a3a3a;
+}
+
+tr:hover {
+    background: #4a4a4a;
+}
+
+.flexbox-demo {
+    display: flex;
+    justify-content: space-around;  /* Abstand zwischen Boxen */
+    align-items: center;            /* Vertikal zentrieren */
+    gap: 1.5em;                     /* Abstand zwischen Elementen */
+    padding: 2em;
+    margin-top: 3em;
+    background: linear-gradient(145deg, #6a6a6a, #555);
+    border-radius: 25px;
+}
