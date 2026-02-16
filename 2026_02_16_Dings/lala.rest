@@ -1,0 +1,1 @@
+GET http://10.40.206.37:5500/SWP-Nicolai-DB/2025_11_17_HÜ_Websiteverbessern/HÜ%20HTML.html
